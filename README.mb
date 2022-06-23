@@ -1,0 +1,5 @@
+1 shooting script - listener
+2 game manager - aktivira listenere 
+3 enemy - game object, prefab
+	- moving script 
+	- add a shooting script as well
