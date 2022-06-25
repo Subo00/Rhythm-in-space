@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-public class Beat : Subject
+public class Beat : MonoBehaviour
 {
-    
+    public event Action Subject = delegate{};
     private float timer = 0.0f;
     private float interval;
 
@@ -23,7 +23,7 @@ public class Beat : Subject
         if(timer >= interval)
         {
             timer -= interval;
-            base.Send();
+            Subject.Invoke();
         }
     }
 

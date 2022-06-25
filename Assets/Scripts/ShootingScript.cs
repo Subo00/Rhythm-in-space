@@ -1,15 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class ShootingScript : Observer
+using System;
+public class ShootingScript : MonoBehaviour
 {
     ObjectPooler objectPooler;
     private Metronom metronom;
-    public override void Receive()
-    {
-        Debug.Log("USPIJEH!");
-    }
+    
     private void start()
     {
         
@@ -19,18 +16,17 @@ public class ShootingScript : Observer
     {
         var gameController = GameObject.FindGameObjectWithTag("GameController");
         metronom = gameController.GetComponent<Metronom>();
-        metronom.full.AddObserver(this);
+        metronom.full.Subject += Shoot;
         Debug.Log("I did it");
     }
 
     void OnDisable()
     {
-        metronom.full.RemoveObserver(this);
      
     }
 
     void Shoot()
     {
-       // objectPooler.Instance.SpawnFromPool("Laser", transform.position, Quaternion.identity);
+       Debug.Log("USPIJEH!");// objectPooler.Instance.SpawnFromPool("Laser", transform.position, Quaternion.identity);
     }
 }

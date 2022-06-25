@@ -8,7 +8,6 @@ public class Metronom : MonoBehaviour
     public static Metronom MetronomInstance;
     public Beat full;
     public int test = 0;
-    public ShootingScript ss;
 
     [SerializeField] private float BPM;
     public void Awake()
@@ -31,7 +30,6 @@ public class Metronom : MonoBehaviour
     private void FixedUpdate()
     {
         Debug.Log("Test:" + test);
-        ss.Receive();
         BeatDetection();
     }
     

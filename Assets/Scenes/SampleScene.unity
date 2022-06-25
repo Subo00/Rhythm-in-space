@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 140084612}
   - component: {fileID: 140084613}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Game Controller
   m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,6 +168,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   full: {fileID: 1839150171}
+  test: 0
+  ss: {fileID: 1240749626}
   BPM: 60
 --- !u!1 &519420028
 GameObject:
