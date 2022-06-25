@@ -7,23 +7,18 @@ public class ShootingScript : MonoBehaviour
     ObjectPooler objectPooler;
     private Metronom metronom;
     
-    private void start()
-    {
-        
-        //objectPooler = ObjectPooler.Instance;
-    }
+   
     void OnEnable()
     {
         var gameController = GameObject.FindGameObjectWithTag("GameController");
         metronom = gameController.GetComponent<Metronom>();
         metronom.full.Subject += Shoot;
-        Debug.Log("I did it");
     }
 
     void OnDisable()
     {
-     
-    }
+        metronom.full.Subject -= Shoot;
+    }   
 
     void Shoot()
     {
