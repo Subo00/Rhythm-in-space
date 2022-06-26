@@ -375,10 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc4a8422a485a042b894ced3e24ffa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pools:
-  - tag: Laser
-    prefab: {fileID: 1546442239030592598, guid: 2757ee4e29b9c3d54bf620812d87a6aa, type: 3}
-    size: 0
+  pools: []
 --- !u!4 &768202881
 Transform:
   m_ObjectHideFlags: 0
@@ -495,7 +492,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1240749627}
-  - component: {fileID: 1240749626}
+  - component: {fileID: 1240749628}
+  - component: {fileID: 1240749629}
   m_Layer: 0
   m_Name: Test
   m_TagString: Untagged
@@ -503,18 +501,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1240749626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1240749625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20e67430c620bb4388d8f6e171475fa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1240749627
 Transform:
   m_ObjectHideFlags: 0
@@ -530,6 +516,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1240749628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240749625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08063a9803b98ed88876d50dccc8b811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!70 &1240749629
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240749625}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &1276239798
 GameObject:
   m_ObjectHideFlags: 0
