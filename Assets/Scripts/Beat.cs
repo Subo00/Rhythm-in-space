@@ -5,13 +5,9 @@ using System;
 public class Beat : MonoBehaviour
 {
     public event Action Subject = delegate{};
-    private float timer = 0.0f;
+    private float timer;
     private float interval;
 
-    public void Start()
-    {
-        
-    }
     public void SetInterval(float interval)
     {
         this.interval = interval;
@@ -31,6 +27,5 @@ public class Beat : MonoBehaviour
     {
         return interval;
     }
-
    
 }

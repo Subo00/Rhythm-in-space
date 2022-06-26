@@ -6,8 +6,8 @@ using System;
 public class Metronom : MonoBehaviour
 {
     public static Metronom MetronomInstance;
-    public Beat full;
-    public int test = 0;
+    public Beat[] beats;
+    
 
     [SerializeField] private float BPM;
     public void Awake()
@@ -29,14 +29,21 @@ public class Metronom : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Debug.Log("Test:" + test);
         BeatDetection();
     }
     
     private void BeatDetection()
     {
-        full.SetInterval(60.0f / BPM);
+        beats[0].SetInterval(60.0f / BPM);
+        for(int i = 1; i < beats.Length; i++)
+        {
+            beats[i].SetInterval(beats[i-1].GetInterval()/ 2);
+        }
+        
+        for(int i = 0; i < beats.Length; i++)
+        {
+            beats[i].AddTime(Time.deltaTime);
+        }
 
-        full.AddTime(Time.deltaTime);
     }
 }

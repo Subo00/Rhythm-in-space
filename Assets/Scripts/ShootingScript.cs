@@ -12,14 +12,19 @@ public class ShootingScript : MonoBehaviour
     {
         var gameController = GameObject.FindGameObjectWithTag("GameController");
         metronom = gameController.GetComponent<Metronom>();
-        metronom.full.Subject += Shoot;
+        metronom.beats[0].Subject += Shoot;
+        metronom.beats[2].Subject += Loot;
     }
 
     void OnDisable()
     {
-        metronom.full.Subject -= Shoot;
+        metronom.beats[0].Subject -= Shoot;
+        metronom.beats[2].Subject -= Loot;
     }   
 
+    void Loot(){
+        Debug.Log("PLL");
+    }
     void Shoot()
     {
        Debug.Log("USPIJEH!");// objectPooler.Instance.SpawnFromPool("Laser", transform.position, Quaternion.identity);
