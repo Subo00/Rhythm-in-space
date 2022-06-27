@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class Projectiles : MonoBehaviour
 {
-    private Collider2D capsuleCollider;
-    void Start()
+    private Collider2D col;
+    protected Rigidbody2D rb;
+    void Awake()
     {
-        capsuleCollider = gameObject.GetComponent<Collider2D>();
-        if(!capsuleCollider)
+        col = gameObject.GetComponent<Collider2D>();
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        if(!col)
         {
             Debug.LogWarning(gameObject.name + " needs a Collider2D");
+        }
+        if(!rb)
+        {
+            Debug.LogWarning(gameObject.name + " needs a Rigidbody2D");
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         Action(other);
-        gameObject.SetActive(false);
     }
 
     protected virtual void Action(Collider2D other)
     {
         Debug.Log(other.gameObject.name);
+        gameObject.SetActive(false);
     }
 }

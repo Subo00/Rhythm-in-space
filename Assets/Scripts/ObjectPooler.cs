@@ -12,18 +12,10 @@ public class ObjectPooler : MonoBehaviour
         public int size;
     }
 
-    #region  Singleton
-    public static ObjectPooler Instance;
-
-    private void Awake()
-    {
-        Instance = this;
-    }
-    #endregion
     public List<Pool> pools;
     public Dictionary<string, Queue<GameObject>> poolDictionary;
     
-    void Start()
+    void Awake()
     {
         poolDictionary = new Dictionary<string, Queue<GameObject>>();
 
@@ -35,6 +27,7 @@ public class ObjectPooler : MonoBehaviour
             {
                 GameObject obj = Instantiate(pool.prefab);
                 obj.SetActive(false);
+                obj.transform.SetParent(this.transform);
                 objectPool.Enqueue(obj);
             } 
             poolDictionary.Add(pool.tag, objectPool);
@@ -50,10 +43,10 @@ public class ObjectPooler : MonoBehaviour
         }
 
         GameObject objectToSpawn = poolDictionary[tag].Dequeue();
-
-        objectToSpawn.SetActive(true);
+ 
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
+        objectToSpawn.SetActive(true);
 
         poolDictionary[tag].Enqueue(objectToSpawn);
 

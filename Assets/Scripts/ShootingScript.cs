@@ -4,22 +4,27 @@ using UnityEngine;
 using System;
 public class ShootingScript : MonoBehaviour
 {
-    ObjectPooler objectPooler;
+    private ObjectPooler objectPool;
     private Metronom metronom;
     
+    void Start()
+    {
+        var temp = GameObject.Find("Object Pool");
+        objectPool = temp.GetComponent<ObjectPooler>();
+    }
    
     void OnEnable()
     {
         var gameController = GameObject.FindGameObjectWithTag("GameController");
         metronom = gameController.GetComponent<Metronom>();
-        metronom.beats[0].Subject += Shoot;
-        metronom.beats[2].Subject += Loot;
+        metronom.beats[2].Subject += Shoot;
+        metronom.beats[1].Subject += Loot;
     }
 
     void OnDisable()
     {
-        metronom.beats[0].Subject -= Shoot;
-        metronom.beats[2].Subject -= Loot;
+        metronom.beats[2].Subject -= Shoot;
+        metronom.beats[1].Subject -= Loot;
     }   
 
     void Loot(){
@@ -27,6 +32,6 @@ public class ShootingScript : MonoBehaviour
     }
     void Shoot()
     {
-       Debug.Log("USPIJEH!");// objectPooler.Instance.SpawnFromPool("Laser", transform.position, Quaternion.identity);
+       objectPool.SpawnFromPool("Laser", transform.position + new Vector3(0,0,0), Quaternion.identity);
     }
 }
