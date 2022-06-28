@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 170360799613049866}
   - component: {fileID: 5928005894589080722}
   m_Layer: 0
-  m_Name: Laser
+  m_Name: LaserPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 20
   speed: 30
+  ignoreTag: Player
 --- !u!70 &170360799613049866
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

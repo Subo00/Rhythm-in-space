@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-public class ShootingScript : MonoBehaviour
+public class Shooting : MonoBehaviour
 {
     private ObjectPooler objectPool;
     private Metronom metronom;

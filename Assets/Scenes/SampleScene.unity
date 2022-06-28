@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &127037893 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5352590335836928510, guid: 2757ee4e29b9c3d54bf620812d87a6aa, type: 3}
-  m_PrefabInstance: {fileID: 891295154}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &140084610
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,6 +491,10 @@ PrefabInstance:
       value: Laser
       objectReference: {fileID: 0}
     - target: {fileID: 5352590335836928510, guid: 2757ee4e29b9c3d54bf620812d87a6aa, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352590335836928510, guid: 2757ee4e29b9c3d54bf620812d87a6aa, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -540,7 +539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - tag: Laser
-    prefab: {fileID: 127037893}
+    prefab: {fileID: 5352590335836928510, guid: 2757ee4e29b9c3d54bf620812d87a6aa, type: 3}
     size: 15
 --- !u!4 &1016119113
 Transform:

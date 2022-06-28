@@ -6,9 +6,14 @@ public class DamageDealer : Projectiles
 {
     [SerializeField] private int damage;
     [SerializeField] private float speed;
+    [SerializeField] private string ignoreTag;
+    
     protected override void Action(Collider2D other)
     {
-       // base.Action(other);
+      if(other.tag == ignoreTag) return;
+      
+      other.GetComponent<Health>().RecieveDamge(damage);
+      base.Action(other);
     }
     private void OnEnable()
     {

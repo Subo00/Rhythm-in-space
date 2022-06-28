@@ -27,7 +27,6 @@ public class Projectiles : MonoBehaviour
 
     protected virtual void Action(Collider2D other)
     {
-        Debug.Log(other.gameObject.name);
         gameObject.SetActive(false);
     }
 }
