@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] protected int health;
+    protected int health;
     [SerializeField] private int healthMax;
     protected ObjectPooler objectPool;
 

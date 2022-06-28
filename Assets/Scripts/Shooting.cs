@@ -6,6 +6,8 @@ public class Shooting : MonoBehaviour
 {
     private ObjectPooler objectPool;
     private Metronom metronom;
+    [SerializeField] protected string laserName;
+    [SerializeField] private int shootingInterval;
     
     void Start()
     {
@@ -17,21 +19,17 @@ public class Shooting : MonoBehaviour
     {
         var gameController = GameObject.FindGameObjectWithTag("GameController");
         metronom = gameController.GetComponent<Metronom>();
-        metronom.beats[2].Subject += Shoot;
-        metronom.beats[1].Subject += Loot;
+        metronom.beats[shootingInterval].Subject += Shoot;
     }
 
     void OnDisable()
     {
-        metronom.beats[2].Subject -= Shoot;
-        metronom.beats[1].Subject -= Loot;
+        metronom.beats[shootingInterval].Subject -= Shoot;
     }   
 
-    void Loot(){
-        Debug.Log("PLL");
-    }
+    
     void Shoot()
     {
-       objectPool.SpawnFromPool("Laser", transform.position + new Vector3(0,0,0), Quaternion.identity);
+       objectPool.SpawnFromPool(laserName, transform.position + new Vector3(0,0,0), Quaternion.identity);
     }
 }
