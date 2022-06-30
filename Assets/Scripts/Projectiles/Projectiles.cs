@@ -10,6 +10,7 @@ public class Projectiles : MonoBehaviour
     {
         col = gameObject.GetComponent<Collider2D>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        
         if(!col)
         {
             Debug.LogWarning(gameObject.name + " needs a Collider2D");
