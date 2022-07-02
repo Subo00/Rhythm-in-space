@@ -9,14 +9,12 @@ public class Shooting : MonoBehaviour
     [SerializeField] protected string laserName;
     [SerializeField] private int shootingInterval;
     
-    void Start()
-    {
-        var temp = GameObject.Find("Object Pool");
-        objectPool = temp.GetComponent<ObjectPooler>();
-    }
    
     void OnEnable()
     {
+        var temp = GameObject.Find("Object Pool");
+        objectPool = temp.GetComponent<ObjectPooler>();
+
         var gameController = GameObject.FindGameObjectWithTag("GameController");
         metronom = gameController.GetComponent<Metronom>();
         metronom.beats[shootingInterval].Subject += Shoot;

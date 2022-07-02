@@ -23,10 +23,6 @@ public class Metronom : MonoBehaviour
         }
     }
 
-    public void Start()
-    {
-        
-    }
     private void FixedUpdate()
     {
         BeatDetection();
