@@ -11,7 +11,7 @@ public class DamageDealer : Projectiles
     protected override void Action(Collider2D other)
     {
       if(other.tag == ignoreTag || other.tag == "Wall") return;
-      
+      //Debug.Log("other: " + other.name);
       other.GetComponent<Health>().RecieveDamge(damage);
       base.Action(other);
     }
