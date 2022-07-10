@@ -11,6 +11,7 @@ public class MusicManager : MonoBehaviour
     {
         public string tag;
         public Queue<GameObject> barsGO;
+        public List<GameObject> listBars;
         public GameObject currentBarGO;
         public event Action Subject = delegate{};
     }
@@ -26,6 +27,7 @@ public class MusicManager : MonoBehaviour
 
         foreach(Chanal chanal in chanals)
         {
+            chanal.barsGO = new Queue<GameObject>(chanal.listBars);
             chanal.currentBarGO = chanal.barsGO.Dequeue();
             chanal.currentBarGO.SetActive(true);
         }
