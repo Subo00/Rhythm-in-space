@@ -4,24 +4,29 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private int beatIndex = 0;
-    private Metronom metronom;
+    [SerializeField] //private int beatIndex = 0;
+    //private Metronom metronom;
+    private MusicManager MusicManager;
     private ObjectPooler spawnerPool;
 
     void OnEnable()
     {
+        /*
         var gameController = GameObject.FindGameObjectWithTag("GameController");
         metronom = gameController.GetComponent<Metronom>(); 
+        */
+        var tempMusic = GameObject.Find("MusicManager");
+        MusicManager = tempMusic.GetComponent<MusicManager>();
         
         var temp = GameObject.Find("Spawner Pool");
         spawnerPool = temp.GetComponent<ObjectPooler>();
 
-        metronom.beats[beatIndex].Subject += Spawn;
+        MusicManager.chanals[1].Subject += Spawn;
     }
 
     void OnDisable()
     {
-        metronom.beats[beatIndex].Subject -= Spawn;
+        MusicManager.chanals[1].Subject -= Spawn;
     }
 
     private void Spawn()

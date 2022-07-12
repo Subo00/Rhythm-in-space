@@ -14,6 +14,10 @@ public class MusicManager : MonoBehaviour
         public List<GameObject> listBars;
         public GameObject currentBarGO;
         public event Action Subject = delegate{};
+        public void CallInvoke()
+        {
+            Subject.Invoke();
+        }
     }
     private int counter = 0;
     public List<Chanal> chanals;
@@ -46,8 +50,7 @@ public class MusicManager : MonoBehaviour
             Bar tmp = chanal.currentBarGO.GetComponent<Bar>(); 
             if(tmp.IsTrigger())
             {
-                //chanal.Subject.Invoke();
-                Debug.Log("I did a thing");
+                chanal.CallInvoke();
             }
         }
 
