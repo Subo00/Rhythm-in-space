@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserName: LaserPlayer
-  shootingInterval: 2
+  chanalTag: ShootPlayer
 --- !u!114 &3386542901522537536
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,10 +16,11 @@ public class MusicManager : MonoBehaviour
         public event Action Subject = delegate{};
         public void CallInvoke()
         {
+            Debug.Log(tag + " Invoked!");
             Subject.Invoke();
         }
     }
-    private int counter = 0;
+    private int beatCounter = 0;
     public List<Chanal> chanals;
     private Metronom metronom;
     void OnEnable()
@@ -58,9 +59,9 @@ public class MusicManager : MonoBehaviour
 
     void BeatCount()
     {
-        counter++;
-        if(counter == 4){
-            counter = 0;        
+        beatCounter++;
+        if(beatCounter == 4){
+            beatCounter = 0;        
             foreach(Chanal chanal in chanals)
             {
                 chanal.barsGO.Enqueue(chanal.currentBarGO);
@@ -69,5 +70,15 @@ public class MusicManager : MonoBehaviour
                 chanal.currentBarGO.SetActive(true);
             }
         }
+    }
+
+    public Chanal GetChanal(string tag)
+    {
+        foreach(Chanal chanal in chanals)
+        {
+            if(chanal.tag == tag)
+            return chanal;
+        }
+        return null;
     }
 }

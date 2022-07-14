@@ -284,16 +284,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chanals:
-  - tag: Something
+  - tag: ShootEnemy
+    listBars:
+    - {fileID: 1235432302}
+    currentBarGO: {fileID: 1235432302}
+  - tag: ShootPlayer
     listBars:
     - {fileID: 1287936693}
-    - {fileID: 1235432302}
     currentBarGO: {fileID: 1287936693}
   - tag: Spawn
     listBars:
-    - {fileID: 1287936693}
-    - {fileID: 1235432302}
-    currentBarGO: {fileID: 1287936693}
+    - {fileID: 713500477}
+    currentBarGO: {fileID: 713500477}
 --- !u!4 &306885413
 Transform:
   m_ObjectHideFlags: 0
@@ -307,7 +309,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &306885414
 AudioSource:
@@ -594,7 +596,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &740916623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -607,7 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497247e38a4f7547d9401d36601e0815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beatIndex: 0
+  chanalTag: Spawn
 --- !u!4 &740916624
 Transform:
   m_ObjectHideFlags: 0
@@ -879,7 +881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb757099bfa7e8f7946c8803279ef3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rythmGates: 00010001000100010001000100010001
+  rythmGates: 01010101010101010101010101010101
 --- !u!4 &1287936695
 Transform:
   m_ObjectHideFlags: 0
@@ -893,7 +895,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1289669360
 GameObject:
@@ -1299,6 +1301,10 @@ PrefabInstance:
     - target: {fileID: 2424018889109734508, guid: 994d12380d1eb69c8b31cb96b776d63d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293484707852516611, guid: 994d12380d1eb69c8b31cb96b776d63d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 994d12380d1eb69c8b31cb96b776d63d, type: 3}

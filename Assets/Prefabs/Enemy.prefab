@@ -157,4 +157,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserName: LaserEnemy
-  shootingInterval: 1
+  chanalTag: ShootEnemy
