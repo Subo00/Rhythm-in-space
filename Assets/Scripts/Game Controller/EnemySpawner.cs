@@ -7,9 +7,12 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private string chanalTag;
     private MusicManager MusicManager;
     private ObjectPooler spawnerPool;
+    private AudioSource AudioSource;
 
     void OnEnable()
     {
+        AudioSource = gameObject.GetComponent<AudioSource>();
+        
         var tempMusic = GameObject.Find("MusicManager");
         MusicManager = tempMusic.GetComponent<MusicManager>();
         
@@ -26,6 +29,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Spawn()
     {
+        AudioSource.Play(); 
         float xPos = Random.Range(-4.0f, 4.0f);
         Vector3 pos = new Vector3(xPos, 6, 0);
         spawnerPool.SpawnFromPool("Basic", pos, Quaternion.identity );

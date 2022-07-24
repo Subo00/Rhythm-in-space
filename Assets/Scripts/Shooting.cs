@@ -4,15 +4,20 @@ using UnityEngine;
 using System;
 public class Shooting : MonoBehaviour
 {
+    [SerializeField] protected string laserName;
+
     private ObjectPooler objectPool;
     private Metronom metronom;
     private MusicManager MusicManager;
-    [SerializeField] protected string laserName;
     [SerializeField] private string chanalTag;
     
+    private AudioSource AudioSource;
+   
    
     void OnEnable()
     {
+        AudioSource = GetComponent<AudioSource>();
+    
         var temp = GameObject.Find("Object Pool");
         objectPool = temp.GetComponent<ObjectPooler>();
         
@@ -29,6 +34,7 @@ public class Shooting : MonoBehaviour
     
     void Shoot()
     {
-       objectPool.SpawnFromPool(laserName, transform.position + new Vector3(0,0,0), Quaternion.identity);
+        AudioSource.Play(); 
+        objectPool.SpawnFromPool(laserName, transform.position + new Vector3(0,0,0), Quaternion.identity);
     }
 }
