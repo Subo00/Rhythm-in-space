@@ -5,13 +5,12 @@ using System;
 public class Shooting : MonoBehaviour
 {
     [SerializeField] protected string laserName;
+    [SerializeField] protected string chanalTag;
 
-    private ObjectPooler objectPool;
-    private Metronom metronom;
-    private MusicManager MusicManager;
-    [SerializeField] private string chanalTag;
-    
-    private AudioSource AudioSource;
+    protected ObjectPooler objectPool;
+    protected Metronom metronom;
+    protected MusicManager MusicManager;    
+    protected AudioSource AudioSource;
    
    
     void OnEnable()
@@ -32,7 +31,7 @@ public class Shooting : MonoBehaviour
     }   
 
     
-    void Shoot()
+    public virtual void Shoot()
     {
         AudioSource.Play(); 
         objectPool.SpawnFromPool(laserName, transform.position + new Vector3(0,0,0), Quaternion.identity);
