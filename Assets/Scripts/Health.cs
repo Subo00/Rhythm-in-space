@@ -26,6 +26,15 @@ public class Health : MonoBehaviour
             Death();
         }
     }
+    
+    public void RecieveHealth(int heal)
+    {
+        health += heal;
+        if(health > healthMax)
+        {
+            health = healthMax;
+        }
+    }
 
     protected virtual void Death()
     {
