@@ -22,7 +22,7 @@ public class Health : MonoBehaviour
         health = healthMax;
     }
 
-    public void RecieveDamge(int damage)
+    public virtual void RecieveDamge(int damage)
     {
         health -= damage;
         if(health <= 0)
