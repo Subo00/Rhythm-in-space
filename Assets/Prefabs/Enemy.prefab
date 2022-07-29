@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7860458575186501258}
   - component: {fileID: 7860458575186501259}
   - component: {fileID: 7860458575186501256}
-  - component: {fileID: 7860458575186501255}
   - component: {fileID: 2656768930022542609}
+  - component: {fileID: 2950434550129563047}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -145,21 +145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthMax: 100
---- !u!114 &7860458575186501255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7860458575186501257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20e67430c620bb4388d8f6e171475fa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  laserName: LaserEnemy
-  chanalTag: ShootEnemy
-  shootingInterval: 0
 --- !u!82 &2656768930022542609
 AudioSource:
   m_ObjectHideFlags: 0
@@ -256,3 +241,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2950434550129563047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7860458575186501257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 420b70492904e0110bc67915d4640b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserName: LaserEnemy
+  chanalTag: ShootEnemy

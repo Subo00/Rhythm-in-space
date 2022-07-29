@@ -31,9 +31,8 @@ public class Shooting : MonoBehaviour
     }   
 
     
-    public virtual void Shoot()
+    protected virtual void Shoot()
     {
         AudioSource.Play(); 
-        objectPool.SpawnFromPool(laserName, transform.position + new Vector3(0,0,0), Quaternion.identity);
     }
 }
