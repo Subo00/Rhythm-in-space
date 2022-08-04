@@ -5,7 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     protected int health;
-    [SerializeField] private int healthMax;
+    [SerializeField] protected int healthMax;
     protected ObjectPooler objectPool;
     private Scoring score;
 
@@ -31,15 +31,6 @@ public class Health : MonoBehaviour
         }
     }
     
-    public void RecieveHealth(int heal)
-    {
-        health += heal;
-        if(health > healthMax)
-        {
-            health = healthMax;
-        }
-    }
-
     protected virtual void Death()
     {
         //pull an explosion from the pooler

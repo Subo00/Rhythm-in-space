@@ -12,4 +12,17 @@ public class PlayerHealth : Health
         base.RecieveDamge(damage);
         healthText.text = health.ToString();
     }
+
+
+    public void RecieveHealth(int heal)
+    {
+        health += heal;
+        if(health > healthMax)
+        {
+            health = healthMax;
+        }
+        
+        healthText.text = health.ToString();
+    }
+
 }
