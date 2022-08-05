@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    protected int health;
-    [SerializeField] protected int healthMax;
+    public int health;
+    public int healthMax;
     protected ObjectPooler objectPool;
     private Scoring score;
 

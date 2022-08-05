@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealUp : PowerUps
+public class SpreadUp : PowerUps
 {
-    [SerializeField] private int healPoints;
+    [SerializeField] private float spreadTime;
     protected override void Action(Collider2D other)
     {
-        handler.Heal(healPoints);
+        handler.Spread(spreadTime);
         base.Action(other);
     }
 }

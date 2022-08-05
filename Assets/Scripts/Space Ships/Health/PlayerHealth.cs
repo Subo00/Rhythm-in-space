@@ -10,19 +10,13 @@ public class PlayerHealth : Health
     public override void RecieveDamge(int damage)
     {
         base.RecieveDamge(damage);
-        healthText.text = health.ToString();
+        Display();   
     }
 
-
-    public void RecieveHealth(int heal)
+    public void Display()
     {
-        health += heal;
-        if(health > healthMax)
-        {
-            health = healthMax;
-        }
-        
         healthText.text = health.ToString();
     }
+
 
 }

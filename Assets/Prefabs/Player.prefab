@@ -14,8 +14,10 @@ GameObject:
   - component: {fileID: 8705928393589853500}
   - component: {fileID: 3293484707852516611}
   - component: {fileID: 1939110423}
-  - component: {fileID: 4820770581108827702}
   - component: {fileID: 4820770581108827703}
+  - component: {fileID: 502272425}
+  - component: {fileID: 502272426}
+  - component: {fileID: 5812069476623300745}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -249,20 +251,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4820770581108827702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 211756095627601036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2176f392147541a5a4f7db0900f6577, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  laserName: LaserPlayer
-  chanalTag: ShootPlayer
 --- !u!114 &4820770581108827703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,5 +263,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718eb4510f2512d1da2ddef8183fb439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   healthMax: 150
   healthText: {fileID: 0}
+--- !u!114 &502272425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211756095627601036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6320f2d165e1a991b9cb3a96538d69a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &502272426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211756095627601036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 420b70492904e0110bc67915d4640b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserName: LaserPlayer
+  chanalTag: ShootPlayer
+--- !u!114 &5812069476623300745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211756095627601036}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2176f392147541a5a4f7db0900f6577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserName: LaserPlayer
+  chanalTag: ShootPlayer

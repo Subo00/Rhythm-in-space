@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class PowerUps : Projectiles
 {
-    void OnStart()
+    protected PowerUpHandler handler;
+    void OnEnable()
     {
-        int LayerIgnoreRaycast = LayerMask.NameToLayer("PowerUps");
-        gameObject.layer = LayerIgnoreRaycast;
+        int layerInt = LayerMask.NameToLayer("PowerUps");
+        gameObject.layer = layerInt;
         Debug.Log("Current layer: " + gameObject.layer);
+        GameObject player = GameObject.FindWithTag("Player");
+        handler = player.GetComponent<PowerUpHandler>();
     }
     protected override void Action(Collider2D other)
     {
