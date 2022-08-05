@@ -8,6 +8,9 @@ public class Health : MonoBehaviour
     public int healthMax;
     protected ObjectPooler objectPool;
     private Scoring score;
+    [Range(0f,1f)]
+    [SerializeField] protected float dropChance;
+    [SerializeField] private string dropName;
 
     void Start()
     {
@@ -35,7 +38,10 @@ public class Health : MonoBehaviour
     {
         //pull an explosion from the pooler
         //pull a drop from the pooler
-
+        float randomNumber = Random.Range(0f,1f);
+        if(dropChance >= randomNumber)
+        objectPool.SpawnFromPool(dropName, gameObject.transform.position, Quaternion.identity );
+        
         //add points
         score.AddPoints(healthMax);
         score.IncrementMultiplier();

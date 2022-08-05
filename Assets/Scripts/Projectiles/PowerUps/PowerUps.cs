@@ -9,7 +9,6 @@ public class PowerUps : Projectiles
     {
         int layerInt = LayerMask.NameToLayer("PowerUps");
         gameObject.layer = layerInt;
-        Debug.Log("Current layer: " + gameObject.layer);
         GameObject player = GameObject.FindWithTag("Player");
         handler = player.GetComponent<PowerUpHandler>();
     }

@@ -32,6 +32,10 @@ public class EnemySpawner : MonoBehaviour
         AudioSource.Play(); 
         float xPos = Random.Range(-4.0f, 4.0f);
         Vector3 pos = new Vector3(xPos, 6, 0);
-        spawnerPool.SpawnFromPool("Basic", pos, Quaternion.identity );
+        float randomNumber = Random.Range(0.0f, 1.0f);
+        
+            spawnerPool.SpawnFromPool("Spread", pos, Quaternion.identity );
+        
+    
     }
 }

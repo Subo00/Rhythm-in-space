@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
-  speed: 30
+  speed: 15
   ignoreTag: Player
 --- !u!70 &170360799613049866
 CapsuleCollider2D:
