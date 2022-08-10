@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7860458575186501252}
+  - component: {fileID: 7860458575186501256}
+  - component: {fileID: 2950434550129563047}
   - component: {fileID: 7860458575186501253}
   - component: {fileID: 7860458575186501258}
   - component: {fileID: 7860458575186501259}
-  - component: {fileID: 7860458575186501256}
   - component: {fileID: 2656768930022542609}
-  - component: {fileID: 2950434550129563047}
   m_Layer: 7
   m_Name: EnemyBasic
   m_TagString: Enemy
@@ -37,6 +37,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7860458575186501256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7860458575186501257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8c3fb667516dc42be15424613ccfa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  healthMax: 60
+  dropChance: 0.3
+  dropName: HealUp
+--- !u!114 &2950434550129563047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7860458575186501257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 420b70492904e0110bc67915d4640b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserName: LaserEnemy
+  chanalTag: ShootEnemy
 --- !u!212 &7860458575186501253
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -132,22 +162,6 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &7860458575186501256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7860458575186501257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac8c3fb667516dc42be15424613ccfa7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  healthMax: 65
-  dropChance: 0.3
-  dropName: HealUp
 --- !u!82 &2656768930022542609
 AudioSource:
   m_ObjectHideFlags: 0
@@ -244,17 +258,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2950434550129563047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7860458575186501257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 420b70492904e0110bc67915d4640b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  laserName: LaserEnemy
-  chanalTag: ShootEnemy
