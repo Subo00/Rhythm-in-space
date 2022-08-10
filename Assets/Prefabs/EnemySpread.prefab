@@ -67,6 +67,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserName: LaserEnemy
   chanalTag: ShootSpread
+  speed: -25
 --- !u!212 &7748990336016547285
 SpriteRenderer:
   m_ObjectHideFlags: 0

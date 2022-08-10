@@ -6,6 +6,8 @@ public class Shooting : MonoBehaviour
 {
     [SerializeField] protected string laserName;
     [SerializeField] protected string chanalTag;
+    [SerializeField] protected float speed;
+
 
     protected ObjectPooler objectPool;
     protected Metronom metronom;
