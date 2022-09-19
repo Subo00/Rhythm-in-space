@@ -19,8 +19,13 @@ public class MusicManager : MonoBehaviour
             Subject.Invoke();
         }
     }
-                            //  <index, duration>
-    [SerializeField] private  List<Tuple<int, int>> switchSequance;
+    [System.Serializable]
+    public struct SwitchSequance
+    {
+        public int index;
+        public int duration;
+    }
+    [SerializeField] private  SwitchSequance[] switchSequance;
     public int switchIndex = 0;
     public int switchCounter = 0;
     [SerializeField] private List<Chanal> chanals;
@@ -31,18 +36,9 @@ public class MusicManager : MonoBehaviour
         metronom = gameController.GetComponent<Metronom>();
         metronom.beats[2].Subject += RythmCount;
         metronom.beats[0].Subject += SwitchCount;
-        
-        switchSequance = new List<Tuple<int, int>>();
-        switchSequance.Add(Tuple.Create(0,4*4));
-        switchSequance.Add(Tuple.Create(1,4*12));
-        switchSequance.Add(Tuple.Create(2,4*8));
-        switchSequance.Add(Tuple.Create(1,4*8));
-        switchSequance.Add(Tuple.Create(2,4*16));
-        switchSequance.Add(Tuple.Create(1,4*8));
-        switchSequance.Add(Tuple.Create(0,4*4));
 
-        SwitchBar(switchSequance[switchIndex].Item1);
-        switchCounter = switchSequance[switchIndex].Item2;
+        SwitchBar(switchSequance[switchIndex].index);
+        switchCounter = switchSequance[switchIndex].duration;
 
         foreach(Chanal chanal in chanals)
         {
@@ -74,10 +70,10 @@ public class MusicManager : MonoBehaviour
         if(switchCounter == 0)
         {
             switchIndex++;
-            switchCounter = switchSequance[switchIndex].Item2;
-            SwitchBar(switchSequance[switchIndex].Item1);
+            switchCounter = switchSequance[switchIndex].duration;
+            SwitchBar(switchSequance[switchIndex].index);
 
-            if(switchIndex == switchSequance.Count)
+            if(switchIndex == switchSequance.Length)
             {
                 this.gameObject.SetActive(false);
             }
