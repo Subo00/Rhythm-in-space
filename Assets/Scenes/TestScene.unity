@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 60947879}
   - component: {fileID: 60947878}
   m_Layer: 0
-  m_Name: Temp
+  m_Name: MainMusicLoop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -433,17 +433,13 @@ MonoBehaviour:
   - index: 0
     duration: 16
   - index: 1
-    duration: 48
-  - index: 2
     duration: 32
   - index: 1
-    duration: 32
-  - index: 2
-    duration: 64
+    duration: 24
   - index: 1
-    duration: 32
-  - index: 0
-    duration: 32
+    duration: 42
+  - index: 1
+    duration: 4
   switchIndex: 0
   switchCounter: 0
   chanals:
@@ -451,26 +447,32 @@ MonoBehaviour:
     barsGO:
     - {fileID: 1591786283}
     - {fileID: 1287936693}
-    - {fileID: 713500477}
+    - {fileID: 570125021}
     currentBarGO: {fileID: 1591786283}
-  - tag: Spawn
+  - tag: SpawnBasic
     barsGO:
     - {fileID: 1591786283}
-    - {fileID: 1799667343}
-    - {fileID: 570125021}
-    currentBarGO: {fileID: 570125021}
+    - {fileID: 713500477}
+    - {fileID: 713500477}
+    currentBarGO: {fileID: 1591786283}
+  - tag: ShootBasic
+    barsGO:
+    - {fileID: 1591786283}
+    - {fileID: 1235432302}
+    - {fileID: 1894223978}
+    currentBarGO: {fileID: 1591786283}
+  - tag: SpawnSpread
+    barsGO:
+    - {fileID: 1591786283}
+    - {fileID: 1591786283}
+    - {fileID: 406787270}
+    currentBarGO: {fileID: 1591786283}
   - tag: ShootSpread
     barsGO:
     - {fileID: 1591786283}
-    - {fileID: 713500477}
-    - {fileID: 713500477}
-    currentBarGO: {fileID: 1591786283}
-  - tag: ShootEnemy
-    barsGO:
     - {fileID: 1591786283}
-    - {fileID: 1235432302}
-    - {fileID: 1235432302}
-    currentBarGO: {fileID: 1235432302}
+    - {fileID: 1799667343}
+    currentBarGO: {fileID: 1591786283}
 --- !u!4 &306885413
 Transform:
   m_ObjectHideFlags: 0
@@ -582,6 +584,51 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &406787270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 406787271}
+  - component: {fileID: 406787272}
+  m_Layer: 0
+  m_Name: EnemyS-Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &406787271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406787270}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 855603035}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &406787272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406787270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb757099bfa7e8f7946c8803279ef3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rythmGates: 00000000000000000001000000000000
 --- !u!1 &438319166
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,7 +768,7 @@ GameObject:
   - component: {fileID: 570125023}
   - component: {fileID: 570125022}
   m_Layer: 0
-  m_Name: Bar 3
+  m_Name: Player-Shoot-S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -739,7 +786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb757099bfa7e8f7946c8803279ef3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rythmGates: 00010000000100000001000000010001
+  rythmGates: 01000100010001000100010001000100
 --- !u!4 &570125023
 Transform:
   m_ObjectHideFlags: 0
@@ -753,7 +800,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 855603035}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &713500477
 GameObject:
@@ -766,7 +813,7 @@ GameObject:
   - component: {fileID: 713500479}
   - component: {fileID: 713500478}
   m_Layer: 0
-  m_Name: Kick03
+  m_Name: EnemyB-Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -798,7 +845,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 855603035}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &740916622
 GameObject:
@@ -830,7 +877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497247e38a4f7547d9401d36601e0815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chanalTag: Spawn
+  chanalTag: SpawnBasic
   enemyType: Basic
 --- !u!4 &740916624
 Transform:
@@ -1201,10 +1248,12 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1287936695}
+  - {fileID: 570125023}
   - {fileID: 1235432304}
   - {fileID: 713500479}
-  - {fileID: 570125023}
+  - {fileID: 1894223979}
   - {fileID: 1799667345}
+  - {fileID: 406787271}
   - {fileID: 1591786284}
   m_Father: {fileID: 0}
   m_RootOrder: 12
@@ -1277,7 +1326,7 @@ GameObject:
   - component: {fileID: 1235432304}
   - component: {fileID: 1235432303}
   m_Layer: 0
-  m_Name: BassDrum03
+  m_Name: EnemyB-Shoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1309,7 +1358,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 855603035}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1276239798
 GameObject:
@@ -1358,7 +1407,7 @@ GameObject:
   - component: {fileID: 1287936695}
   - component: {fileID: 1287936694}
   m_Layer: 0
-  m_Name: Kick01
+  m_Name: Player-Shoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1637,7 +1686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497247e38a4f7547d9401d36601e0815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chanalTag: Spawn
+  chanalTag: SpawnSpread
   enemyType: Spread
 --- !u!1 &1566605766
 GameObject:
@@ -1713,7 +1762,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 855603035}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1591786285
 MonoBehaviour:
@@ -1868,7 +1917,7 @@ GameObject:
   - component: {fileID: 1799667345}
   - component: {fileID: 1799667344}
   m_Layer: 0
-  m_Name: Bar 4
+  m_Name: EnemyS-Shoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1886,7 +1935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb757099bfa7e8f7946c8803279ef3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rythmGates: 00000001000000000000000100000000
+  rythmGates: 00000000000000010000000100000000
 --- !u!4 &1799667345
 Transform:
   m_ObjectHideFlags: 0
@@ -1900,8 +1949,53 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 855603035}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1894223978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1894223979}
+  - component: {fileID: 1894223980}
+  m_Layer: 0
+  m_Name: EnemyB-Shoot-S
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1894223979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894223978}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 855603035}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1894223980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894223978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb757099bfa7e8f7946c8803279ef3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rythmGates: 00000100000001000001000000000100
 --- !u!1 &1919879703
 GameObject:
   m_ObjectHideFlags: 0

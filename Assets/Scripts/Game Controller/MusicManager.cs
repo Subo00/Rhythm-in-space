@@ -39,11 +39,6 @@ public class MusicManager : MonoBehaviour
 
         SwitchBar(switchSequance[switchIndex].index);
         switchCounter = switchSequance[switchIndex].duration;
-
-        foreach(Chanal chanal in chanals)
-        {
-            chanal.currentBarGO.SetActive(true);
-        }
     }
 
     void OnDisable()
@@ -56,8 +51,8 @@ public class MusicManager : MonoBehaviour
     {
         foreach(Chanal chanal in chanals)
         {
-            Bar tmp = chanal.currentBarGO.GetComponent<Bar>(); 
-            if(tmp.IsTrigger())
+            Bar bar = chanal.currentBarGO.GetComponent<Bar>(); 
+            if(bar.IsTrigger())
             {
                 chanal.CallInvoke();
             }
@@ -70,13 +65,14 @@ public class MusicManager : MonoBehaviour
         if(switchCounter == 0)
         {
             switchIndex++;
-            switchCounter = switchSequance[switchIndex].duration;
-            SwitchBar(switchSequance[switchIndex].index);
-
+            
             if(switchIndex == switchSequance.Length)
             {
                 this.gameObject.SetActive(false);
             }
+
+            switchCounter = switchSequance[switchIndex].duration;
+            SwitchBar(switchSequance[switchIndex].index);           
         }else
         {
             switchCounter--;

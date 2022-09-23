@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserName: LaserEnemy
-  chanalTag: ShootEnemy
+  chanalTag: ShootBasic
   speed: -10
 --- !u!212 &7860458575186501253
 SpriteRenderer:
