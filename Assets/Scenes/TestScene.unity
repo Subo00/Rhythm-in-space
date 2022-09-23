@@ -433,22 +433,20 @@ MonoBehaviour:
   - index: 0
     duration: 16
   - index: 1
+    duration: 48
+  - index: 2
     duration: 32
   - index: 1
-    duration: 24
+    duration: 32
+  - index: 2
+    duration: 64
   - index: 1
-    duration: 42
-  - index: 1
-    duration: 4
+    duration: 32
+  - index: 0
+    duration: 32
   switchIndex: 0
   switchCounter: 0
   chanals:
-  - tag: ShootPlayer
-    barsGO:
-    - {fileID: 1591786283}
-    - {fileID: 1287936693}
-    - {fileID: 570125021}
-    currentBarGO: {fileID: 1591786283}
   - tag: SpawnBasic
     barsGO:
     - {fileID: 1591786283}
@@ -472,6 +470,12 @@ MonoBehaviour:
     - {fileID: 1591786283}
     - {fileID: 1591786283}
     - {fileID: 1799667343}
+    currentBarGO: {fileID: 1591786283}
+  - tag: ShootPlayer
+    barsGO:
+    - {fileID: 1591786283}
+    - {fileID: 1287936693}
+    - {fileID: 570125021}
     currentBarGO: {fileID: 1591786283}
 --- !u!4 &306885413
 Transform:
@@ -1562,7 +1566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1561470529
 Transform:
   m_ObjectHideFlags: 0
@@ -1590,7 +1594,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d985a3be13fe4704b8a144b07e0122a6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
