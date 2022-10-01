@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &60947878
 AudioSource:
   m_ObjectHideFlags: 0
@@ -477,6 +477,7 @@ MonoBehaviour:
     - {fileID: 1287936693}
     - {fileID: 570125021}
     currentBarGO: {fileID: 1591786283}
+  musicGO: {fileID: 60947877}
 --- !u!4 &306885413
 Transform:
   m_ObjectHideFlags: 0

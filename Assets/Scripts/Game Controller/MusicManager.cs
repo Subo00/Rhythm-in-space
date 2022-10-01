@@ -30,12 +30,15 @@ public class MusicManager : MonoBehaviour
     public int switchCounter = 0;
     [SerializeField] private List<Chanal> chanals;
     private Metronom metronom;
+    [SerializeField] private GameObject musicGO;
     void OnEnable()
     {
         var gameController = GameObject.FindGameObjectWithTag("GameController");
         metronom = gameController.GetComponent<Metronom>();
         metronom.beats[2].Subject += RythmCount;
         metronom.beats[0].Subject += SwitchCount;
+
+        musicGO.SetActive(true);
 
         SwitchBar(switchSequance[switchIndex].index);
         switchCounter = switchSequance[switchIndex].duration;
