@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour
     private MusicManager MusicManager;
     private ObjectPooler spawnerPool;
     private AudioSource AudioSource;
+    private static float xPosLeft = -2.5f;
 
     void OnEnable()
     {
@@ -31,7 +32,7 @@ public class EnemySpawner : MonoBehaviour
     private void Spawn()
     {
         AudioSource.Play(); 
-        float xPos = Random.Range(-4.0f, 4.0f);
+        float xPos = Random.Range(xPosLeft, xPosLeft * (-1f));
         Vector3 pos = new Vector3(xPos, 6, 0);
         float randomNumber = Random.Range(0.0f, 1.0f);
         
