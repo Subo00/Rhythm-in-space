@@ -18,5 +18,10 @@ public class PlayerHealth : Health
         healthText.text = health.ToString();
     }
 
-
+    protected override void Death()
+    {
+        base.Death();
+        GameObject.Find("Canvas").GetComponent<SceneController>().LoadStartScene();
+    }
+    
 }
