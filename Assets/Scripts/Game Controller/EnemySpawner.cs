@@ -36,6 +36,6 @@ public class EnemySpawner : MonoBehaviour
         Vector3 pos = new Vector3(xPos, 6, 0);
         float randomNumber = Random.Range(0.0f, 1.0f);
         
-        spawnerPool.SpawnFromPool(enemyType, pos, Quaternion.identity );    
+        spawnerPool.SpawnFromPool(enemyType, pos, new  Quaternion(-180, 0, 0, 1));    
     }
 }
