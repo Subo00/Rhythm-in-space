@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a5b4cc02562a68bc59d483934e7e50d5, type: 3}
   m_Color: {r: 0.8962264, g: 0.53241366, b: 0.19023676, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,7 +100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  speed: -10
   ignoreTag: Enemy
 --- !u!70 &4073723188003811843
 CapsuleCollider2D:
