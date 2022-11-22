@@ -16,7 +16,6 @@ public class MusicManager : MonoBehaviour
         public event Action Subject = delegate{};
         public void CallInvoke()
         {
-            Debug.Log(tag + " Invoked!");
             Subject.Invoke();
         }
     }
