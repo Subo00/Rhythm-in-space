@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
 
-    [SerializeField] private float time = 1f;
+    [SerializeField] private float waitTime = 1f;
 
     private int currentSceneIndex;
     void Start(){ currentSceneIndex = SceneManager.GetActiveScene().buildIndex;  }
@@ -20,7 +20,7 @@ public class SceneController : MonoBehaviour
     }
     public void LoadGameOver()
     { 
-        StartCoroutine(WaitAndLoad(time));
+        StartCoroutine(WaitAndLoad(waitTime));
     }
     IEnumerator WaitAndLoad(float time)
     {
