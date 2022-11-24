@@ -453,12 +453,28 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 347044421283188911, guid: 4695ea10d60185c9ab22d9f5962be0f8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -900
+      objectReference: {fileID: 0}
+    - target: {fileID: 347044421283188911, guid: 4695ea10d60185c9ab22d9f5962be0f8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -450
+      objectReference: {fileID: 0}
+    - target: {fileID: 347044421283188911, guid: 4695ea10d60185c9ab22d9f5962be0f8, type: 3}
       propertyPath: m_LocalScale.x
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 347044421283188911, guid: 4695ea10d60185c9ab22d9f5962be0f8, type: 3}
       propertyPath: m_LocalScale.y
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 347044421283188911, guid: 4695ea10d60185c9ab22d9f5962be0f8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00024414062
+      objectReference: {fileID: 0}
+    - target: {fileID: 347044421283188911, guid: 4695ea10d60185c9ab22d9f5962be0f8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00024414062
       objectReference: {fileID: 0}
     - target: {fileID: 5712651075350741069, guid: 4695ea10d60185c9ab22d9f5962be0f8, type: 3}
       propertyPath: m_text
@@ -590,12 +606,28 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 347044421283188911, guid: 4695ea10d60185c9ab22d9f5962be0f8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -900
+      objectReference: {fileID: 0}
+    - target: {fileID: 347044421283188911, guid: 4695ea10d60185c9ab22d9f5962be0f8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -450
+      objectReference: {fileID: 0}
+    - target: {fileID: 347044421283188911, guid: 4695ea10d60185c9ab22d9f5962be0f8, type: 3}
       propertyPath: m_LocalScale.x
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 347044421283188911, guid: 4695ea10d60185c9ab22d9f5962be0f8, type: 3}
       propertyPath: m_LocalScale.y
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 347044421283188911, guid: 4695ea10d60185c9ab22d9f5962be0f8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00024414062
+      objectReference: {fileID: 0}
+    - target: {fileID: 347044421283188911, guid: 4695ea10d60185c9ab22d9f5962be0f8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00012207031
       objectReference: {fileID: 0}
     - target: {fileID: 5712651075350741069, guid: 4695ea10d60185c9ab22d9f5962be0f8, type: 3}
       propertyPath: m_text
