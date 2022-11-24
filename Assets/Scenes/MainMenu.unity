@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddcd13a25b982238b89e4aff2209ba9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 1
+  waitTime: 2
 --- !u!224 &533192813 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6739298387204440266, guid: 4695ea10d60185c9ab22d9f5962be0f8, type: 3}

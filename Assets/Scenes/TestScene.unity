@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddcd13a25b982238b89e4aff2209ba9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 1
+  waitTime: 1
 --- !u!1 &276197031
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,8 +723,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740916622}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.94017, y: 15.836016, z: -0.0440585}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1495,7 +1495,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1402301199}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7918217, y: 1.6363813, z: 0.114810996}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1529,8 +1529,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561470528}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.94017, y: 15.836016, z: -0.0440585}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1788,7 +1788,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698975904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.93145, y: -2.198558, z: 0.67715055}
+  m_LocalPosition: {x: 5.53145, y: -2.198558, z: 0.67715055}
   m_LocalScale: {x: 1, y: 1.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1808,7 +1808,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.18488216}
+  m_Offset: {x: 0.6581336, y: 0.18488216}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1819,7 +1819,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 11.168489}
+  m_Size: {x: 2.316267, y: 11.168489}
   m_EdgeRadius: 0
 --- !u!114 &1698975907
 MonoBehaviour:
@@ -1834,7 +1834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anchorType: 4
-  anchorOffset: {x: 4.19, y: 0, z: 0}
+  anchorOffset: {x: 4.79, y: 0, z: 0}
 --- !u!1 &1799667343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,7 +1950,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1971177678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.3785503, y: -2.198558, z: 0.67715055}
+  m_LocalPosition: {x: -3.9285505, y: -2.198558, z: 0.67715055}
   m_LocalScale: {x: 1, y: 1.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1970,7 +1970,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.18488216}
+  m_Offset: {x: -0.8482609, y: 0.18488216}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1981,7 +1981,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 11.168489}
+  m_Size: {x: 2.6965218, y: 11.168489}
   m_EdgeRadius: 0
 --- !u!114 &1971177681
 MonoBehaviour:
@@ -1996,7 +1996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anchorType: 4
-  anchorOffset: {x: -4.12, y: 0, z: 0}
+  anchorOffset: {x: -4.67, y: 0, z: 0}
 --- !u!1001 &531204217207275363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2234,10 +2234,6 @@ PrefabInstance:
     - target: {fileID: 2424018889109734508, guid: 994d12380d1eb69c8b31cb96b776d63d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4820770581108827703, guid: 994d12380d1eb69c8b31cb96b776d63d, type: 3}
-      propertyPath: healthMax
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4820770581108827703, guid: 994d12380d1eb69c8b31cb96b776d63d, type: 3}
       propertyPath: healthText
