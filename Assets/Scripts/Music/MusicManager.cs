@@ -19,6 +19,9 @@ public class MusicManager : MonoBehaviour
             Subject.Invoke();
         }
     }
+
+    [SerializeField] private int chanaleBeatsDelay = 1;
+    private bool rythmBlocked = true;
     private int beatCounter = 0;
     public List<Chanal> chanals;
     private Metronom metronom;
@@ -45,6 +48,7 @@ public class MusicManager : MonoBehaviour
 
     void RythmCount()
     {
+        if (rythmBlocked) return;
         foreach(Chanal chanal in chanals)
         {
             Bar tmp = chanal.currentBarGO.GetComponent<Bar>(); 
@@ -59,6 +63,14 @@ public class MusicManager : MonoBehaviour
     void BeatCount()
     {
         beatCounter++;
+        
+        if (rythmBlocked)
+        {
+            chanaleBeatsDelay--;
+            if (chanaleBeatsDelay <= 0){ rythmBlocked = false; }
+            else { return; }
+        }
+        
         if(beatCounter == 4){
             beatCounter = 0;        
             foreach(Chanal chanal in chanals)
