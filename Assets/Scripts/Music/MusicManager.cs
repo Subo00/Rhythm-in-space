@@ -51,8 +51,8 @@ public class MusicManager : MonoBehaviour
         if (rythmBlocked) return;
         foreach(Chanal chanal in chanals)
         {
-            Bar tmp = chanal.currentBarGO.GetComponent<Bar>(); 
-            if(tmp.IsTrigger())
+            Bar bar = chanal.currentBarGO.GetComponent<Bar>(); 
+            if(bar.IsTrigger())
             {
                 chanal.CallInvoke();
             }
