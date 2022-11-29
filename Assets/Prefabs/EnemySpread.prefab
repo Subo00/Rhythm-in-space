@@ -132,7 +132,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dc8cd0d28202281a98e53f600da16706, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -232,8 +232,13 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.5, y: 0}
-  - {x: 0.5, y: 0}
+  - {x: 0.012210153, y: -0.73904616}
+  - {x: -0.72507143, y: 0.242322}
+  - {x: -0.4954739, y: 0.7542315}
+  - {x: 0.005311204, y: 0.76831526}
+  - {x: 0.47335598, y: 0.7305081}
+  - {x: 0.73952115, y: 0.2290506}
+  - {x: 0.031693578, y: -0.7170942}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
