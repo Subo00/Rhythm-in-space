@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public int health;
-    public int healthMax;
-    protected ObjectPooler objectPool;
-    private Scoring score;
     [Range(0f,1f)]
     [SerializeField] protected float dropChance;
     [SerializeField] private string dropName;
-
+    
+    public int health;
+    public int healthMax;
+    
+    protected ObjectPooler objectPool;
+    
+    private Scoring score;
+    private SpriteRenderer spriteRenderer;
+    private Material matDefault;
+    public Material matWhite;
     void Start()
     {
         var temp = GameObject.Find("Object Pool");
