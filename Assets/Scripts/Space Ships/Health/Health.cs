@@ -24,6 +24,10 @@ public class Health : MonoBehaviour
 
         var GC = GameObject.Find("Game Controller");
         score = GC.GetComponent<Scoring>();
+
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        matDefault = spriteRenderer.material;
+        matWhite = Resources.Load("Materials/White", typeof(Material)) as Material;
     }
     void OnEnable()
     {
@@ -32,6 +36,9 @@ public class Health : MonoBehaviour
 
     public virtual void RecieveDamge(int damage)
     {
+        spriteRenderer.material = matWhite;
+        Invoke("ResetMaterial", 0.2f);
+        
         health -= damage;
         if(health <= 0)
         {
@@ -53,4 +60,6 @@ public class Health : MonoBehaviour
 
         gameObject.SetActive(false);
     }
+
+    void ResetMaterial() { spriteRenderer.material = matDefault; }
 }
