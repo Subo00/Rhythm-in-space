@@ -10,8 +10,7 @@ public class MusicManager : MonoBehaviour
     public class Chanal
     {
         public string tag;
-        public Queue<GameObject> barsGO;
-        public List<GameObject> listBars;
+        public GameObject[] barsGO;
         public GameObject currentBarGO;
         public event Action Subject = delegate{};
         public void CallInvoke()
@@ -19,36 +18,36 @@ public class MusicManager : MonoBehaviour
             Subject.Invoke();
         }
     }
-
-    [SerializeField] private int chanaleBeatsDelay = 1;
-    private bool rythmBlocked = true;
-    private int beatCounter = 0;
-    public List<Chanal> chanals;
+    [System.Serializable]
+    public struct SwitchSequance
+    {
+        public int index;
+        public int duration;
+    }
+    [SerializeField] private  SwitchSequance[] switchSequance;
+    public int switchIndex = 0;
+    public int switchCounter = 0;
+    [SerializeField] private List<Chanal> chanals;
     private Metronom metronom;
     void OnEnable()
     {
         var gameController = GameObject.FindGameObjectWithTag("GameController");
         metronom = gameController.GetComponent<Metronom>();
         metronom.beats[2].Subject += RythmCount;
-        metronom.beats[0].Subject += BeatCount;
+        metronom.beats[0].Subject += SwitchCount;
 
-        foreach(Chanal chanal in chanals)
-        {
-            chanal.barsGO = new Queue<GameObject>(chanal.listBars);
-            chanal.currentBarGO = chanal.barsGO.Dequeue();
-            chanal.currentBarGO.SetActive(true);
-        }
+        SwitchBar(switchSequance[switchIndex].index);
+        switchCounter = switchSequance[switchIndex].duration;
     }
 
     void OnDisable()
     {
         metronom.beats[2].Subject -= RythmCount;
-        metronom.beats[0].Subject -= BeatCount;
+        metronom.beats[0].Subject -= SwitchCount;
     }   
 
     void RythmCount()
     {
-        if (rythmBlocked) return;
         foreach(Chanal chanal in chanals)
         {
             Bar bar = chanal.currentBarGO.GetComponent<Bar>(); 
@@ -60,26 +59,30 @@ public class MusicManager : MonoBehaviour
 
     }
 
-    void BeatCount()
+    void SwitchCount()
     {
-        beatCounter++;
-        
-        if (rythmBlocked)
+        if(switchCounter == 0)
         {
-            chanaleBeatsDelay--;
-            if (chanaleBeatsDelay <= 0){ rythmBlocked = false; }
-            else { return; }
-        }
-        
-        if(beatCounter == 4){
-            beatCounter = 0;        
-            foreach(Chanal chanal in chanals)
+            switchIndex++;
+            
+            if(switchIndex == switchSequance.Length)
             {
-                chanal.barsGO.Enqueue(chanal.currentBarGO);
-                chanal.currentBarGO.SetActive(false);
-                chanal.currentBarGO = chanal.barsGO.Dequeue();
-                chanal.currentBarGO.SetActive(true);
+                this.gameObject.SetActive(false);
             }
+
+            switchCounter = switchSequance[switchIndex].duration;
+            SwitchBar(switchSequance[switchIndex].index);           
+        }else
+        {
+            switchCounter--;
+        }
+    }
+
+    void SwitchBar(int index)
+    {
+        foreach(Chanal chanal in chanals)
+        {
+            chanal.currentBarGO = chanal.barsGO[index];
         }
     }
 
