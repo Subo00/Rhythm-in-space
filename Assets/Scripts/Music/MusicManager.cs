@@ -29,6 +29,7 @@ public class MusicManager : MonoBehaviour
     public int switchCounter = 0;
     [SerializeField] private List<Chanal> chanals;
     private Metronom metronom;
+    
     void OnEnable()
     {
         var gameController = GameObject.FindGameObjectWithTag("GameController");
@@ -65,17 +66,11 @@ public class MusicManager : MonoBehaviour
         {
             switchIndex++;
             
-            if(switchIndex == switchSequance.Length)
-            {
-                this.gameObject.SetActive(false);
-            }
+            if(switchIndex == switchSequance.Length) { this.gameObject.SetActive(false); }
 
             switchCounter = switchSequance[switchIndex].duration;
             SwitchBar(switchSequance[switchIndex].index);           
-        }else
-        {
-            switchCounter--;
-        }
+        }else { switchCounter--; }
     }
 
     void SwitchBar(int index)

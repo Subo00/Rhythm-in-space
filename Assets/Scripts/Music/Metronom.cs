@@ -21,6 +21,12 @@ public class Metronom : MonoBehaviour
             MetronomInstance = this;
             DontDestroyOnLoad(this.gameObject);
         }
+        
+        beats[0].SetInterval(60.0f / BPM);
+        for(int i = 1; i < beats.Length; i++)
+        {
+            beats[i].SetInterval(beats[i-1].GetInterval()/ 2);
+        }
     }
 
     private void FixedUpdate()
@@ -30,16 +36,9 @@ public class Metronom : MonoBehaviour
     
     private void BeatDetection()
     {
-        beats[0].SetInterval(60.0f / BPM);
-        for(int i = 1; i < beats.Length; i++)
-        {
-            beats[i].SetInterval(beats[i-1].GetInterval()/ 2);
-        }
-        
         for(int i = 0; i < beats.Length; i++)
         {
             beats[i].AddTime(Time.deltaTime);
         }
-
     }
 }

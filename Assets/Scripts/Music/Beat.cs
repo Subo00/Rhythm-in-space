@@ -8,11 +8,6 @@ public class Beat : MonoBehaviour
     private float timer;
     private float interval;
 
-    public void SetInterval(float interval)
-    {
-        this.interval = interval;
-    }
-
     public void AddTime(float time)
     {
         timer += time;
@@ -23,9 +18,8 @@ public class Beat : MonoBehaviour
         }
     }
 
-    public float GetInterval()
-    {
-        return interval;
-    }
+    public void SetInterval(float interval) { this.interval = interval; }
+
+    public float GetInterval() { return interval; }
    
 }
