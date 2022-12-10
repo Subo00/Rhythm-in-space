@@ -367,11 +367,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   switchSequance:
   - index: 0
-    duration: 15
+    duration: 14
   - index: 1
-    duration: 49
+    duration: 46
   - index: 2
     duration: 31
+  - index: 1
+    duration: 31
+  - index: 2
+    duration: 64
+  - index: 1
+    duration: 32
+  - index: 0
+    duration: 32
   switchIndex: 0
   switchCounter: 0
   chanals:
