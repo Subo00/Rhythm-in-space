@@ -401,11 +401,17 @@ MonoBehaviour:
     - {fileID: 1315144398}
     - {fileID: 1432543160}
     currentBarGO: {fileID: 1911880829}
-  - tag: Spawn
+  - tag: SpawnB
     barsGO:
     - {fileID: 1911880829}
     - {fileID: 832112636}
     - {fileID: 832112636}
+    currentBarGO: {fileID: 1911880829}
+  - tag: SpawnS
+    barsGO:
+    - {fileID: 1911880829}
+    - {fileID: 1911880829}
+    - {fileID: 789751200}
     currentBarGO: {fileID: 1911880829}
 --- !u!4 &306885413
 Transform:
