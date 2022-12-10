@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7334f609754d95b46ab209a443d89889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 5
   ignoreTag: Enemy
 --- !u!70 &4073723188003811843
 CapsuleCollider2D:
