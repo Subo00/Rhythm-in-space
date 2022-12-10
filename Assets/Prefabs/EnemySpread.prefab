@@ -49,10 +49,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8c3fb667516dc42be15424613ccfa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  healthMax: 70
   dropChance: 0.25
   dropName: SpreadUp
+  health: 0
+  healthMax: 70
+  matWhite: {fileID: 0}
 --- !u!114 &2925564410645337450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserName: LaserEnemy
   chanalTag: ShootSpread
-  speed: -10
+  speed: -8
 --- !u!212 &7748990336016547285
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -258,7 +259,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.3
+  m_GravityScale: 0.1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
