@@ -68,10 +68,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718eb4510f2512d1da2ddef8183fb439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  healthMax: 100
   dropChance: 0
   dropName: 
+  health: 0
+  healthMax: 100
+  matWhite: {fileID: 0}
   healthText: {fileID: 0}
 --- !u!114 &502272425
 MonoBehaviour:
@@ -100,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserName: LaserPlayer
   chanalTag: ShootPlayer
-  speed: 20
+  speed: 15
 --- !u!114 &5812069476623300745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserName: LaserPlayer
   chanalTag: ShootPlayer
-  speed: 20
+  speed: 15
 --- !u!212 &3328624706503195526
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -232,9 +233,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e8355e354a33f04bca5f6bf959b6965e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3227f84525354dde488969bb53b7b793, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.619
   m_Pitch: 1
   Loop: 0
   Mute: 0
