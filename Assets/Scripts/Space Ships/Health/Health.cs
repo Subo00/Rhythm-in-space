@@ -49,6 +49,8 @@ public class Health : MonoBehaviour
     protected virtual void Death()
     {
         //pull an explosion from the pooler
+        objectPool.SpawnFromPool("Explosion", gameObject.transform.position, Quaternion.identity);
+        
         //pull a drop from the pooler
         float randomNumber = Random.Range(0f,1f);
         if(dropChance >= randomNumber)
