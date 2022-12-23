@@ -5,8 +5,14 @@ using TMPro;
 
 public class PlayerHealth : Health
 {
-    [SerializeField] private TMP_Text healthText;
+    private UIManager uiManager;
 
+    void Start()
+    {
+        base.Start();
+        uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+        Display();
+    }
     public override void RecieveDamge(int damage)
     {
         base.RecieveDamge(damage);
@@ -15,7 +21,7 @@ public class PlayerHealth : Health
 
     public void Display()
     {
-        healthText.text = health.ToString();
+        uiManager.SetHealth((float)health/healthMax);
     }
 
     protected override void Death()

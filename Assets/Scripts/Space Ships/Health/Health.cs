@@ -17,7 +17,7 @@ public class Health : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Material matDefault;
     public Material matWhite;
-    void Start()
+    protected void  Start()
     {
         var temp = GameObject.Find("Object Pool");
         objectPool = temp.GetComponent<ObjectPooler>();
