@@ -5,7 +5,7 @@ using System;
 
 public class MusicManager : MonoBehaviour
 {
-    
+    public static MusicManager MusicManagerInstance;
     [System.Serializable]
     public class Chanal
     {
@@ -32,6 +32,16 @@ public class MusicManager : MonoBehaviour
     
     void OnEnable()
     {
+        if(MusicManagerInstance != null && MusicManagerInstance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            MusicManagerInstance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        
         var gameController = GameObject.FindGameObjectWithTag("GameController");
         metronom = gameController.GetComponent<Metronom>();
         metronom.beats[2].Subject += RythmCount;
