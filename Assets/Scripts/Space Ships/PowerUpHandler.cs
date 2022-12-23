@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PowerUpHandler : MonoBehaviour
 {
-    GameObject player;
+    private GameObject player;
+    private UIManager uiManager;
+    
     /////Health
     PlayerHealth playerHealth;
 
@@ -20,6 +22,8 @@ public class PowerUpHandler : MonoBehaviour
         playerHealth = player.GetComponent<PlayerHealth>();
         normalShooting = player.GetComponent<NormalShooting>();
         spreadShooting = player.GetComponent<SpreadShooting>();
+
+        uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
     }
 
     void FixedUpdate()
@@ -46,6 +50,7 @@ public class PowerUpHandler : MonoBehaviour
             normalShooting.enabled = false;
         }
         spreadTime += time;
+        uiManager.SetSpreadTime(spreadTime);
     }
 
     private void TimerSpread()
@@ -53,6 +58,7 @@ public class PowerUpHandler : MonoBehaviour
         if(spreadTime > 0f)
         {
             spreadTime -= Time.deltaTime;
+            uiManager.SetSpreadTime(spreadTime);
         }
         else if(spreadTime <= 0f)
         {
