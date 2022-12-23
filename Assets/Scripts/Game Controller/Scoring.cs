@@ -9,15 +9,17 @@ public class Scoring : MonoBehaviour
 {
     [SerializeField] private int multiplier = 1;
     [SerializeField] private int beatIndex = 0;
-    [SerializeField] private TMP_Text scoreText;
-    [SerializeField] private TMP_Text multiplierText;
-
+  
     private Metronom metronom;
+    private UIManager uiManager;
     public int score = 0;
 
 
     void OnEnable()
     {
+        var canvas = GameObject.Find("Canvas");
+        uiManager = canvas.GetComponent<UIManager>();
+        
         var gameController = GameObject.FindGameObjectWithTag("GameController");
         metronom = gameController.GetComponent<Metronom>();
 
@@ -32,20 +34,19 @@ public class Scoring : MonoBehaviour
     public void AddPoints(int points)
     {
         score += points * multiplier;
-        scoreText.text = score.ToString();
+        uiManager.SetScore(score);
     }
 
     public void IncrementMultiplier()
     {
         multiplier++;
-        multiplierText.text = multiplier.ToString();
+        uiManager.SetMultiplier(multiplier);
     }
 
     public void DecrementMultiplier()
     {
         if(multiplier == 1) return;
         multiplier--;
-        multiplierText.text = multiplier.ToString();
-
+        uiManager.SetMultiplier(multiplier);
     }
 }
