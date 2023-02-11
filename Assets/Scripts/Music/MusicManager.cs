@@ -25,8 +25,8 @@ public class MusicManager : MonoBehaviour
         public int duration;
     }
     [SerializeField] private  SwitchSequance[] switchSequance;
-    public int switchIndex = 0;
-    public int switchCounter = 0;
+    private int switchIndex = 0;
+    private int switchCounter = 0;
     [SerializeField] private List<Chanal> chanals;
     private Metronom metronom;
     
@@ -62,7 +62,7 @@ public class MusicManager : MonoBehaviour
         foreach(Chanal chanal in chanals)
         {
             Bar bar = chanal.currentBarGO.GetComponent<Bar>(); 
-            if(bar.IsTrigger())
+            if(bar.IsTrigger() && bar)
             {
                 chanal.CallInvoke();
             }
@@ -75,8 +75,11 @@ public class MusicManager : MonoBehaviour
         if(switchCounter == 0)
         {
             switchIndex++;
-            
-            if(switchIndex == switchSequance.Length) { this.gameObject.SetActive(false); }
+
+            if (switchIndex == switchSequance.Length)
+            {
+                Destroy();
+            }
 
             switchCounter = switchSequance[switchIndex].duration;
             SwitchBar(switchSequance[switchIndex].index);           
@@ -99,5 +102,13 @@ public class MusicManager : MonoBehaviour
             return chanal;
         }
         return null;
+    }
+
+    public void Destroy()
+    {
+        GameObject.Find("Canvas").GetComponent<SceneController>().LoadStartScene();
+        Destroy(this.gameObject);
+        MusicManagerInstance = null;
+        return;
     }
 }

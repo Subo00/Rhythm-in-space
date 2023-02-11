@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     private MusicManager musicManager;
     private ObjectPooler spawnerPool;
     private AudioSource audioSource;
-    private static float XposLeft = -3.8f;
+    private static float XposLeft = -3.4f;
     private static float Ypos = 8.0f;
 
     void OnEnable()

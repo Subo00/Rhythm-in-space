@@ -7,9 +7,8 @@ using System;
 
 public class Scoring : MonoBehaviour
 {
-    [SerializeField] private int multiplier = 1;
-    [SerializeField] private int beatIndex = 0;
-  
+    private int multiplier = 1;
+    private int beatIndex = 0;
     private Metronom metronom;
     private UIManager uiManager;
     public int score = 0;
@@ -48,5 +47,11 @@ public class Scoring : MonoBehaviour
         if(multiplier == 1) return;
         multiplier--;
         uiManager.SetMultiplier(multiplier);
+    }
+
+    public void Reset()
+    {
+        score = 0;
+        uiManager.SetScore(score);
     }
 }

@@ -7,11 +7,14 @@ public class PowerUpHandler : MonoBehaviour
     private GameObject player;
     private UIManager uiManager;
     
+    /////Scoring
+    private Scoring score;
+    
     /////Health
-    PlayerHealth playerHealth;
+    private PlayerHealth playerHealth;
 
     /////Shooting
-    [SerializeField] private float spreadTime = 0.0f;
+    private float spreadTime = 0.0f;
     bool isSpread = false;
     NormalShooting normalShooting;
     SpreadShooting spreadShooting;
@@ -23,6 +26,9 @@ public class PowerUpHandler : MonoBehaviour
         normalShooting = player.GetComponent<NormalShooting>();
         spreadShooting = player.GetComponent<SpreadShooting>();
 
+        var gameController = GameObject.Find("Game Controller");
+        score = gameController.GetComponent<Scoring>();
+        
         uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
     }
 
@@ -36,6 +42,7 @@ public class PowerUpHandler : MonoBehaviour
         playerHealth.health += heal;
         if(playerHealth.health > playerHealth.healthMax)
         {
+            score.AddPoints(playerHealth.health- playerHealth.healthMax);
             playerHealth.health = playerHealth.healthMax;
         }
         playerHealth.Display();

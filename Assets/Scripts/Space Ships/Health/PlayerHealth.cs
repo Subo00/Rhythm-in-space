@@ -27,7 +27,7 @@ public class PlayerHealth : Health
     protected override void Death()
     {
         base.Death();
-        GameObject.Find("Canvas").GetComponent<SceneController>().LoadStartScene();
+        GameObject.Find("MusicManager").GetComponent<MusicManager>().Destroy();
     }
     
 }
