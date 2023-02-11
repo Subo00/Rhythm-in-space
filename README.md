@@ -10,6 +10,6 @@ Link to game: https://enci.itch.io/rhythm-in-space
 - Music - Filip Budiša - https://github.com/filipbudisa
 - SFX 
  - https://opengameart.org/content/portal-sound
- - https://opengameart.org/content/lasershootingsx
+ - https://opengameart.org/content/lasershootingsx 
  - https://opengameart.org/content/laser
 
